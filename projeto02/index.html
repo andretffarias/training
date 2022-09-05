@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>verificador de idade</title>
-</head>
-<body>
-    <header>
-        <h1>verificador de idade</h1>
-    </header>
-    <main>
-        <form action="script.js" method="post">
-            <div>
-                <div id="data">
-                    <label for="ano"><strong>Ano de nacimento:</strong></label>
-                    <input type="number" name="ano" id="ano" min="0" max="2022" required>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <title>verificador de idade</title>
+    </head>
+    <body>
+        <header>
+            <h1>verificador de idade</h1>
+        </header>
+        <main>
+            <form action="index.html">
+                <div id="fano">
+                    <label for="vano"><strong>Ano do nacimento:</strong></label>
+                    <input type="number" name="vano" id="vano" min="0">
                 </div>
                 <div id="genero">
-                    <label for="sexo"><strong>Sexo:</strong></label>
-                    <input type="radio" name="sexo" id="sexo" required>
-                    <label for="sexo">Masculino</label>
-                    <input type="radio" name="sexo" id="sexo" required>
-                    <label for="sexo">Feminino</label>
+                    <label for="sex">
+                        <strong>Sexo:</strong>
+                        <input type="radio" id="sexm" name="sex" value="masculino" checked><strong>Masculino</strong>
+                        <input type="radio" id="sexf" name="sex" value="feminino"><strong>Feminino</strong>
+                    </label>
                 </div>
-                <input type="submit" value="enviar">
+                <div id="botao">
+                    <input type="submit" id="send" value="enviar" >
+                </div>
+            </form>
+            <div id="res">
+                <p>Preencha os dados a cima para ver o resultado.</p>
             </div>
-        </form>
-        <div id="resultado">
-            <script src="script.js">
-            </script>
-        </div>
-    </main>
-    <footer>
-        <p>&copy developed of André Farias</p>
-    </footer>
-</body>
-</html>
+        </main>
+        <footer><p>&COPY; developed by André Farias</p></footer>
+    </body>
+    </html>

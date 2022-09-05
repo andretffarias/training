@@ -24,4 +24,5 @@ if (hour < 18) {
     img.innerHTML = `<img src="images/night_sky.jpg"alt="img"width="250px" height="250px">`
 }else if (hour >=0 && hour <= 4) {
     document.body.style.backgroundColor = '#05003e'
-    img.innerHTML = `<img src="images/night_sky.jpg"alt="img"width="250px" height="250px">`}
+    img.innerHTML = `<img src="images/night_sky.jpg"alt="img"width="250px" height="250px">`
+}
