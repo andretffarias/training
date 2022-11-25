@@ -1,0 +1,52 @@
+/* 1. Elemento H1 = Montserrat
+
+2. Elementos com a classe date = Roboto
+
+3. Elementos com a classe post-content = Open Sans */
+
+html{
+    height: 100%;
+}
+
+body {
+    background-color: #ffffff;
+    margin: 0px auto;
+    padding: 0px 50px;
+}
+
+main {
+    color: #000000;
+    background-color:  #fff4f4;
+    max-width: 800px;
+    margin: 0px auto ;
+    padding: 10px;
+}
+
+.date_of_publication {
+    color: #008080;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title_of_the_news {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.summary {
+    font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+    text-align: center;
+    background-color: #008080;
+    margin: 100px -50px 0px -50px;
+    padding: 10px;
+}
+
+footer > p {
+    margin: 0px;
+}
+
+footer > p > a {
+    text-decoration: none;
+    color: #ffffff;
+}
