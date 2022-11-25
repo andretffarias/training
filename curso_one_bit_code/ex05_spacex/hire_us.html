@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/155473/isolated/lists/faa3172dd52035d0c227d7ecab4d6024-x-cross-doodle.png" type="image/x-icon">
+        <title>SpaceX</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="SpaceX.html">
+                    <img src="src/logo.png" alt="logo.png">
+                </a>
+                |
+                <a href="Spaceships.html" target="_self" rel="next"><strong>The Spaceships</strong></a>
+                |
+                <a href="hire_us.html" target="_self" rel="next"><strong>Hire Us</strong></a>
+            </nav>
+        </header>
+        <hr>
+        <main>
+            <h1>Hire us now</h1>
+            <p>Leave a mensage to requeste one of our services and we will get back to you as soon as posible.</p>
+            <p>See <a href="price_list.html" target="_self">price list</a>.</p>
+            <br>
+            <br>
+            <br>
+            <form action="hire_us.html" method="post" target="_self" autocomplete="on">
+                <div id="name">
+                    <label for="fname"><strong>First Name:</strong></label>
+                    <input type="text" name="fname" id="fname" maxlength="15" size="15">
+                    <label for="lname"><strong>Last Name:</strong></label>
+                    <input type="text" name="lname" id="lname" maxlength="15" size="15">
+                </div>
+                <br>
+                <div id="email">
+                    <label for="email"><strong>Email:</strong></label>
+                    <input type="email" name="email" id="email" placeholder="      exaple@gmail.com" size="20" maxlength="20">
+                </div>
+                <br>
+                <br>
+                <div id="service">
+                    <label for="spaceship"><strong>Spaceships:</strong></label>
+                    <select name="spaceship" id="spaceship">
+                        <option value="falcon9">Falcon 9</option>
+                        <option value="falconheavy">Falcon Heavy</option>
+                    </select>
+                    <label for="type_of_service"><strong>Type of Service:</strong></label>
+                    <input type="search" name="search" id="search" list="type_of_service">
+                    <datalist id="type_of_service">
+                        <option value="Nam quis nulla. Integer malesuada."></option>
+                        <option value="In in enim a arcu imperdiet malesuada."></option>
+                        <option value="Sed vel lectus. Donec odio urna."></option>
+                        <option value="Aenean id metus id velit ullamcorper pulvinar."></option>
+                    </datalist>
+                </div>
+                <br>
+                <br>
+                <div id="button">
+                    <input type="submit" name="submit" id="submit" value="Send Message">
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

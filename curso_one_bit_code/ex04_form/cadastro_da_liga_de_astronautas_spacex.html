@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://images.vexels.com/media/users/3/152639/isolated/lists/506b575739e90613428cdb399175e2c8-desenho-de-astronauta-espacial.png" type="image/x-icon">
+    <title>Formulario de Cadastro</title>
+</head>
+
+<body>
+    <h1>Cadastro da liga dos astronautas</h1>
+    <hr>
+    <br>
+    <form action="cadastro_da_liga_de_astronautas_spacex.html" autocomplete="on">
+
+        <div id="nome">
+            <label for="nome"><strong>Nome:</strong></label>
+            <input type="text" name="nome" id="nome" size="11" placeholder="Nome" required>
+            <label for="snome"><strong>Sobrenome:</strong></label>
+            <input type="text" name="snome" id="snome" maxlength="15" size="11" required>
+        </div>
+        <br>
+        <div id="genero">
+            <p><strong>Genero:</strong></p>
+            <label for="masc"><strong>masculino:</strong><input type="radio" name="sexo" id="masc"></label>
+            <label for="femi"><strong>feminino:</strong><input type="radio" name="sexo" id="femi">
+            </label>
+            <label for="none"><strong>Outros:</strong><input type="radio" name="sexo" id="outr"></label>
+        </div>
+        <br>
+        <br>
+        <div id="data+foto">
+            <label for="data"><strong>Data de nacimento:</strong></label>
+            <input type="date"  name="data"id="data" required>
+            <label for="foto"><strong>-Foto</strong></label>
+            <input type="file" required>
+        </div>
+        <br>
+        <br>
+            <div id="nacionalidade">
+                <label for="nacionalidade"><strong>País de Origem:</strong></label>
+                <select name="nacionalidade" id="nacionalidade" required>
+                    <option value="br">Brasil</option>
+                    <option value="eua">Estados Unidos</option>
+                    <option value="rs">Russia</option>
+                </select>
+            </div>
+        <br>
+        <br>
+        <div id="numero">
+            <label for="cel"><strong>Numero:</strong></label>
+            <input type="tel" name="cel" id="cel" placeholder="(00) 0000-0000" size="13" required>
+        </div>
+        <br>
+        <br>
+        <div id="email_e_senha">
+            <input type="email" name="email" id="email" size="30" placeholder="Email" required>
+            
+            <label for="senha"><strong>- Senha:</strong></label>
+            <input type="password" name="senha" id="senha" maxlength="12" size="15" required>
+        </div>
+        <br>
+        <br>
+        <div id="red">
+            <textarea name="redaco" id="redacao" cols="40" rows="15" placeholder="  Escreva um pouco sobre você aqui!!!"></textarea>
+        </div>
+        <br>
+        <br>
+        <input type="submit" name="form_envio" id="form_envio">
+    </form>
+</body>
+</html>
