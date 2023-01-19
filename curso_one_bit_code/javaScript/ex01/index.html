@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="recruitRegistration.js"></script>
     <title>registration form</title>
 </head>
 <body>
     <div class="container">
-        <form id="form">
+        <form action="" id="newEvent">
             <div class="firstName">
                 <label for="firtName">Firt name:</label>
                 <input type="text" name="firtName" id="firtName" maxlength="20" required>
@@ -35,9 +36,12 @@
             </div>
 
             <div class="submit">
-                <input type="submit" name="submit" id="subimit" onclick="processes()" value="submit">
+                <input type="submit" name="submit" id="submit" value="submit">
             </div>
         </form>
+        <div class="res">
+            <p class="resP"></p>
+        </div>
     </div>
 </body>
 </html>
