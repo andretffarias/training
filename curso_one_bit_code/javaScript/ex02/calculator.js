@@ -1,8 +1,5 @@
-const str1 = prompt("Enter a nuber:");
-const str2 = prompt("Enter another nuber:");
-
-const n1 = parseInt(str1);
-const n2 = parseInt(str2);
+const n1 = parseInt(prompt("Enter a nuber:"));
+const n2 = parseInt(prompt("Enter another nuber:"));
 
 const nSum = n1 + n2
 const nSub = n1 - n2
