@@ -9,6 +9,10 @@ if (veloCar01 > veloCar02) {
         "Win the race\n  your car "
         + car01 + "\nwon the race"
     )
+} else if (veloCar01 == veloCar02){
+    alert(
+        "the race was a draw"
+    )
 } else {
     alert(
         "You lost the race\n the car "
