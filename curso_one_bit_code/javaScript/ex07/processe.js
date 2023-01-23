@@ -1,26 +1,25 @@
-const name = prompt("What your name?")
-var cities = confirm("Have you ever visited any city?")
+const name = prompt("What your name?");
+var nameCities = ""
+var numberCity = 0
 
-if (cities == true) {
-    var nameCities = prompt("which city did you visit")
-    var confirm01 = confirm("Have you visited any other cities?")
-    if (confirm01 == true) {
-        while (cities == true) {
-            var nameCities = nameCities + ", " + prompt("which city did you visit")
-            var confirm02 = confirm("Have you visited any other cities?")
-            if (confirm02 == false) {
-                cities = false
-            }
-        }
-    }
+var proceed = confirm("did you visit any city?");
+
+while(proceed == true) {
+    var nameCity = prompt("what is the name of the city?");
+    nameCities = "- " + nameCity + "\n" + nameCities
+    numberCity++
+    proceed = confirm("did you visit another city?")
+}
+
+if (numberCity > 0) {
     alert(
-        "Name: " + name + "\n" +
-        "\nName of cities visited:\n"
-        + nameCities + "."
+        "Name: " + name + "\n\n" +
+        "you visited " + numberCity + " cities" + 
+        "\n Names of cities visited:\n" + nameCities
     )
 }else {
     alert(
-        "Name: " + name +
-        "\n\nYou haven't even visited a city yet"
+        "Name: " + name + "\n" +
+        "you haven't even visited a city"
     )
 }
