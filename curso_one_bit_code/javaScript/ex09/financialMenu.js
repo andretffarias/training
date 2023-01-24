@@ -1,4 +1,4 @@
-var balance = 1000
+var balance = 0
 var exit = 0
 
 do{
@@ -16,7 +16,11 @@ do{
             break;
         case 2 :
             var remove = parseFloat(prompt("how many dollars do you want to remove from your account?"))
-            balance = balance - remove
+            if (balance >= remove){
+                balance = balance - remove
+            }else {
+                alert("insufficient funds")
+            }
             break;
         case 3 :
             var x = confirm("Are you sure you want to log out of your account?")
