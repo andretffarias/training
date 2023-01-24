@@ -14,4 +14,4 @@ do {
     } else  {
         alert("the chosen option was " + option)
     }
-}while(option != 5)
+}while(option !== 5)
