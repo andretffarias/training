@@ -1,19 +1,19 @@
 let option;
 let listVacancies = [];
-let vacancyList = ""
 
 function newVacancy (nameVacancy, descriptionVacancy, wageVacancy) {
-    let Vacancy = {
+    let vacancy = {
         name: "",
         description: "",
         wage: "",
         candidates: [],
-        id : listVacancies.length
+        id : 0,
     }
-    Vacancy.name = nameVacancy
-    Vacancy.description = descriptionVacancy
-    Vacancy.wage = wageVacancy
-    listVacancies.push(Vacancy)
+    vacancy.name = nameVacancy
+    vacancy.description = descriptionVacancy
+    vacancy.wage = wageVacancy
+    vacancy.id = listVacancies.length
+    listVacancies.push(vacancy)
     return listVacancies
 }
 
@@ -31,14 +31,14 @@ do{
     switch(option){
         case 1:
             if (listVacancies.length > 0) {
+                let vacancyList = ""
                 for (let i = 0; i < listVacancies.length; i++) {
-                    vacancy = listVacancies[i]
+                    let vacancy = listVacancies[i]
                     vacancyList += "\nID: " + vacancy.id +
                         "\nName: " + vacancy.name +
                         "\nDescription: " + vacancy.description +
                         "\nWage: $" + vacancy.wage + "/h\n" +
-                        "=============================================="
-                        "\n"
+                        "============================================\n"
                 }
                 alert(vacancyList)
             }else{
@@ -56,7 +56,20 @@ do{
         case 4:
             break
         case 5:
-            /// vai pedir o id da vaga em seguida pedir uma confirmacao de excluir a vaga se verdadeira usa o splice para remover a vaga da lista se nao retorna ao loop
+            let idDel = parseInt(prompt("ID:"))
+            if (idDel <= listVacancies.length && idDel >= 0) {
+                let vacancy = listVacancies[idDel]
+                let conf = confirm(`Are you sure you want to delete the ${vacancy.name} vacancy?`)
+
+                if (conf == true) {
+                    listVacancies.splice(idDel, 1)
+                    alert("Vacancy deleted.")
+                }else {
+                    alert("Vacancy not deleted.")
+                }
+            }else {
+                alert("[ERRO]: ID invalid.")
+            }
             break
         case 6:
             alert("closing program...")
