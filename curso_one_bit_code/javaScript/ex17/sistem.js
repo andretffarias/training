@@ -1,6 +1,7 @@
 let option;
 let listVacancies = [];
-
+let id = 1;
+let indexId
 function newVacancy (nameVacancy, descriptionVacancy, wageVacancy) {
     let vacancy = {
         name: "",
@@ -12,11 +13,11 @@ function newVacancy (nameVacancy, descriptionVacancy, wageVacancy) {
     vacancy.name = nameVacancy
     vacancy.description = descriptionVacancy
     vacancy.wage = wageVacancy
-    vacancy.id = listVacancies.length
+    vacancy.id = id
+    id++
     listVacancies.push(vacancy)
     return listVacancies
 }
-
 
 do{
     option = parseInt(prompt(
@@ -34,7 +35,7 @@ do{
                 let vacancyList = ""
                 for (let i = 0; i < listVacancies.length; i++) {
                     let vacancy = listVacancies[i]
-                    vacancyList += "\nID: " + vacancy.id +
+                    vacancyList += "\nID: 0" + vacancy.id +
                         "\nName: " + vacancy.name +
                         "\nDescription: " + vacancy.description +
                         "\nWage: $" + vacancy.wage + "/h\n" +
@@ -52,27 +53,28 @@ do{
             newVacancy(nameVacancy, descriptionVacancy, wageVacancy)
             break
         case 3:
+            let findId = prompt("ID:") 
+            indexId = listVacancies.findIndex(object => object.id === parseInt(findId))
+            alert(indexId)
             break
         case 4:
             break
         case 5:
             let idDel = parseInt(prompt("ID:"))
-            if (idDel <= listVacancies.length && idDel >= 0) {
-                let vacancy = listVacancies[idDel]
-                let conf = confirm(`Are you sure you want to delete the ${vacancy.name} vacancy?`)
-
+            indexId = listVacancies.findIndex(object => object.id === idDel)
+            if (indexId !== -1) {
+                let conf = confirm(`Are you sure you want to delete the ${listVacancies[indexId].name} vacancy?`)
                 if (conf == true) {
-                    listVacancies.splice(idDel, 1)
+                    listVacancies.splice(indexId, 1)
                     alert("Vacancy deleted.")
                 }else {
                     alert("Vacancy not deleted.")
                 }
-            }else {
-                alert("[ERRO]: ID invalid.")
-            }
+            }else{alert("Vacancy not find.")}
             break
         case 6:
             alert("closing program...")
+            console.log(listVacancies)
             break
         default: alert("[ERRO]: option invalid")
     }
