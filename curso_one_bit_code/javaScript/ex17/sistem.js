@@ -1,7 +1,9 @@
 let option;
 let listVacancies = [];
 let id = 1;
-let indexId
+let indexId;
+let strCandidate = "";
+
 function newVacancy (nameVacancy, descriptionVacancy, wageVacancy) {
     let vacancy = {
         name: "",
@@ -55,9 +57,29 @@ do{
         case 3:
             let findId = prompt("ID:") 
             indexId = listVacancies.findIndex(object => object.id === parseInt(findId))
-            alert(indexId)
+            if (indexId !== -1) {
+                for(let i = 0; i <= listVacancies[indexId].candidates.length ;i++) {
+                    strCandidate += listVacancies[indexId].candidates[i] + "\n"
+                }
+                alert(
+                    "\nID: 0" + listVacancies[indexId].id +
+                        "\nName: " + listVacancies[indexId].name +
+                        "\nDescription: " + listVacancies[indexId].description +
+                        "\nWage: $" + listVacancies[indexId].wage +
+                        "\nCandidates:\n" + strCandidate
+                        
+                    )
+            }else{alert("Vacancy not find.")}
             break
         case 4:
+            let idVacancy = prompt("ID of vacancy:")
+            let findVacancy = listVacancies.findIndex(object => object.id === parseInt(idVacancy))
+            
+            if (findVacancy !== -1) {
+                let nameOfCandidate = prompt("Name of candidate:")
+
+                listVacancies[findVacancy].candidates.push(nameOfCandidate)
+            }else{alert("Vacancy not find.")}
             break
         case 5:
             let idDel = parseInt(prompt("ID:"))
