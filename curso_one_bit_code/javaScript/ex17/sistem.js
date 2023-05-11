@@ -6,16 +6,13 @@ let strCandidate = "";
 
 function newVacancy (nameVacancy, descriptionVacancy, wageVacancy) {
     let vacancy = {
-        name: "",
-        description: "",
-        wage: "",
+        name: nameVacancy,
+        description: descriptionVacancy,
+        wage: wageVacancy,
         candidates: [],
-        id : 0,
+        id : id,
     }
-    vacancy.name = nameVacancy
-    vacancy.description = descriptionVacancy
-    vacancy.wage = wageVacancy
-    vacancy.id = id
+    
     id++
     listVacancies.push(vacancy)
     return listVacancies
@@ -58,17 +55,17 @@ do{
             let findId = prompt("ID:") 
             indexId = listVacancies.findIndex(object => object.id === parseInt(findId))
             if (indexId !== -1) {
-                for(let i = 0; i <= listVacancies[indexId].candidates.length ;i++) {
-                    strCandidate += listVacancies[indexId].candidates[i] + "\n"
+                strCandidate = ""
+                for(let i = 0; i < listVacancies[indexId].candidates.length ;i++) {
+                    strCandidate += "- " + listVacancies[indexId].candidates[i] + "\n"
                 }
                 alert(
-                    "\nID: 0" + listVacancies[indexId].id +
-                        "\nName: " + listVacancies[indexId].name +
-                        "\nDescription: " + listVacancies[indexId].description +
-                        "\nWage: $" + listVacancies[indexId].wage +
-                        "\nCandidates:\n" + strCandidate
-                        
-                    )
+                "\nID: 0" + listVacancies[indexId].id +
+                    "\nName: " + listVacancies[indexId].name +
+                    "\nDescription: " + listVacancies[indexId].description +
+                    "\nWage: $" + listVacancies[indexId].wage +
+                    "\nCandidates:\n" + strCandidate    
+                )
             }else{alert("Vacancy not find.")}
             break
         case 4:
