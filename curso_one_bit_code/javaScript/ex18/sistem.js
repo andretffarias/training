@@ -1,18 +1,19 @@
 let vagas = [];
 let id = 1;
 let i = 0;
-let iNum = 0;
+let iNum = 1;
 let strVagas = "";
-let strCandidatos = "";
 let idVaga = 0;
 let indiceVaga = 0;
+let option;
+
 
 function addVaga () {
     let vaga = {}
 
     vaga.nome = prompt("Nome da vaga:")
     vaga.descricao = prompt("Decrição:")
-    vaga.wege = parseFloat(prompt("Salario:"))
+    vaga.wage = parseFloat(prompt("Salario:"))
     vaga.data = prompt("Data limite (dd/mm/aaaa):")
     vaga.candidatos = []
     vaga.id = id
@@ -22,10 +23,9 @@ function addVaga () {
             "\nId: " + vaga.id +
             "\nNome: " + vaga.nome +
             "\nDescrição: " + vaga.descricao +
-            "\nSalario: " + vaga.wege + 
+            "\nSalario: " + vaga.wage + 
             "\nData: " + vaga.data
         )
-
     if (conf === true) {
         vagas.push(vaga)
         alert("Vaga cadastrada.")
@@ -43,10 +43,9 @@ function excluirVaga () {
                 "\nId: " + vagas[indiceVaga].id +
                 "\nNome: " + vagas[indiceVaga].nome +
                 "\nDescrição: " + vagas[indiceVaga].descricao +
-                "\nSalario: " + vagas[indiceVaga].wege + 
+                "\nSalario: " + vagas[indiceVaga].wage + 
                 "\nData: " + vagas[indiceVaga].data
             )
-    
         if (conf === true) {
             vagas.splice(indiceVaga, 1)
             alert("Vaga excluida.")
@@ -55,34 +54,38 @@ function excluirVaga () {
 }
 
 function verVagas () {
-    for (i = 0; i < vagas.length; i++) {
-        strVagas += 
-        "\nId: " + vagas[i].id +
-        "\nNome: " + vagas[i].nome +
-        "\nDescrição: " + vagas[i].descricao +
-        "\nSalario: " + vagas[i].wege + 
-        "\nData: " + vagas[i].data +
-        "\nCandidatos: " + vagas[i].candidatos.length
-    }
-    alert(strVagas)
+    if(vagas.length > 0) {
+        for (i = 0; i < vagas.length; i++) {
+            strVagas += 
+            "\nId: " + vagas[i].id +
+            "\nNome: " + vagas[i].nome +
+            "\nDescrição: " + vagas[i].descricao +
+            "\nSalario: " + vagas[i].wage + 
+            "\nData: " + vagas[i].data +
+            "\nCandidatos: " + vagas[i].candidatos.length +
+            "\n============================================"
+        }
+        alert(strVagas)
+        strVagas = ""
+    }else{alert("Nem uma vaga cadastrada ainda.")}
 }
 
 function verVaga () {
     idVaga = parseInt(prompt("Id da vaga:"))
     indiceVaga = vagas.findIndex(vaga => vaga.id === idVaga)
 
-    for (i = 0; vagas[indiceVaga].candidatos.length > i; i++) {
-        strCandidatos += iNum++ + "- " + vagas[indiceVaga].candidatos[i] + "\n"
-    }
-    
     if (indiceVaga != -1) {
+        strCandidatos = ""
+        for (i = 0; vagas[indiceVaga].candidatos.length > i; i++) {
+            strCandidatos += iNum++ + "- " + vagas[indiceVaga].candidatos[i] + "\n"
+        }
         alert(
             "\nId: " + vagas[indiceVaga].id +
             "\nNome: " + vagas[indiceVaga].nome +
             "\nDescrição: " + vagas[indiceVaga].descricao +
-            "\nSalario: " + vagas[indiceVaga].wege + 
+            "\nSalario: " + vagas[indiceVaga].wage + 
             "\nData: " + vagas[indiceVaga].data +
-            "\nCandidatos: " + strCandidatos
+            "\nCandidatos:\n" + strCandidatos
         )
     }else{alert("Nem uma vaga encontrada.")}
 }
@@ -104,17 +107,15 @@ function addCandidato () {
 }
 
 
-
 do {
-    let option = prompt(
+    option = parseInt(prompt(
         "\n1- Listar vagas disponíveis" +
         "\n2- Visualizar uma vaga" +
         "\n3- Inscrever um candidato em uma vaga" +
         "\n4- Criar um nova vaga" +
         "\n5- Excluir uma vaga" +
         "\n6- Sair"
-    )
-
+    ))
     switch(option) {
         case 1:
             verVagas()
@@ -136,4 +137,4 @@ do {
             break
         default: alert("[ERRO]: Opição invalida.")
     }
-}while (option != 6)
+}while(option != 6)
