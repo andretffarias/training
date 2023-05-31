@@ -43,11 +43,13 @@ function addContact() {
     formCreate.addEventListener('submit', function(event) {
         event.preventDefault();
     
-        let name = inputName.value
+        let name = i + "- " + inputName.value
         let num = inputNum.value
         console.log(name, num)
         createContact(name, num, contactSection)
     })
+
+    formCreate.removeChild()
 }
 
 function createContact(name, num, contactSection) {
@@ -56,16 +58,13 @@ function createContact(name, num, contactSection) {
     
     let nameContact = document.createElement("h2")
     nameContact.setAttribute("id", "name-contact")
-    nameContact.textContent = "- " + name
-
-    let p = document.createElement("p")
-    p.textContent = i
+    nameContact.textContent = name
     
     let numContact = document.createElement("name")
     numContact.setAttribute("id", "number-contact")
     numContact.textContent = num
 
-    divContact.append(p ,nameContact, numContact)
+    divContact.append(nameContact, numContact)
     contactSection.append(divContact)
     i++
 }
