@@ -1,5 +1,11 @@
+listPlayers = []
+
 function FormAddPlayer() {
     const form = document.querySelector("#lineup-form")
+
+    const formRemove = document.querySelector("#remove-form")
+
+    formRemove.style.display = "none"
 
     if (form.style.display === "none") {
         form.style.display = "block"
@@ -7,7 +13,8 @@ function FormAddPlayer() {
         form.style.display = "none"
     }
 
-    cleanField()
+    cleanFieldLineup()
+    cleanFieldremove()
 }
 
 function lineup() {
@@ -35,10 +42,33 @@ function lineup() {
     div.append(titleName, namePlayer, titleNum, numPlayer, titlePosition, positionPlayer)
     section.appendChild(div)
 
-    cleanField()
+    const player = {
+        name: namePlayer,
+        shirtNum: numPlayer,
+        position: positionPlayer
+    }
+
+    listPlayers.push(player)
+
+    cleanFieldLineup()
 }
 
-function cleanField() {
+function FormRemovePlayer() {
+    const form = document.querySelector("#remove-form")
+
+    const formLineup = document.querySelector("#lineup-form")
+
+    formLineup.style.display = "none"
+
+    if (form.style.display === "none") {
+        form.style.display = "block"
+    }else {
+        form.style.display = "none"
+    }
+    cleanFieldremove()
+}
+
+function cleanFieldLineup() {
 
     const form = document.querySelector("#lineup-form")
 
@@ -50,5 +80,28 @@ function cleanField() {
     numPlayer.value = ""
     radio.forEach((radio) => {
         radio.checked = false;
+    })
+}
+
+function cleanFieldremove() {
+
+    const form = document.querySelector("#remove-form")
+
+    const shirtNum = document.querySelector("#shirt-num")
+
+    shirtNum.value = ""
+}
+
+function checkedPlayerRemove() {
+    const shirtNum = document.querySelector("#shirt-num").value
+
+    listPlayers.forEach((player) => {
+        if (player.shirtNum === shirtNum) {
+
+            const divReturn = document.querySelector("#div-return-form")
+
+            divReturn.style.display = "block"
+            
+        }else{alert("xxxx")}
     })
 }

@@ -11,4 +11,13 @@ header {
 
 form {
     display: none;
+    background-color: #00e2975d;
+}
+
+#lineup-form {
+    display: none;
+}
+
+#div-return-form {
+    display: none;
 }
