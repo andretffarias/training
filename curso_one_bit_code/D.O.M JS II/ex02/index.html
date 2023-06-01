@@ -12,12 +12,47 @@
     <header>
         <h1>Team lineup</h1>
         <nav>
-            <button onclick="createFormAddPlayer()" id="lineup-player">Lineup player</button>
-            <button onclick="createFormRemovePlayer()">Remove player</button>
+            <button onclick="FormAddPlayer()" id="lineup-player-button">Lineup player</button>
+            <button onclick="FormRemovePlayer()" id="remove-player-button">Remove player</button>
         </nav>
     </header>
-    <div id="div-form">
-        <form ></form>
+    <div id="div-forms">
+        <form id="lineup-form">
+            <div id="div-name">
+                <label for="input-name">Name: </label>
+                <input type="text" id="input-name">
+            </div>
+
+            <div id="div-num">
+                <label for="input-num">Shirt number:</label>
+                <input type="number" id="input-num">
+            </div>
+
+            <h3>Player position:</h3>
+            
+            <div id="div-radio">
+                <input type="radio" name="input-radio" id="input-GOL" value="GOL">
+                <label for="input-GOL">GOL</label>
+                <input type="radio" name="input-radio" id="input-ZAG" value="ZAG">
+                <label for="input-ZAG">ZAG</label>
+                <input type="radio" name="input-radio" id="input-LAT" value="LAT">
+                <label for="input-LAT">LAT</label>
+                <input type="radio" name="input-radio" id="input-VOL" value="VOL">
+                <label for="input-VOL">VOL</label>
+                <input type="radio" name="input-radio" id="input-MC" value="MC">
+                <label for="input-MC">MC</label>
+                <input type="radio" name="input-radio" id="input-ATA" value="ATA">
+                <label for="input-ATA">ATA</label>
+                <input type="radio" name="input-radio" id="input-PT" value="PT">
+                <label for="input-PT">PT</label>
+                <input type="radio" name="input-radio" id="input-CA" value="CA">
+                <label for="input-CA">CA</label>
+            </div>
+
+            <div id="div-button">
+                <input type="button" id="lineup-button" value="Lineup" onclick="lineup()">
+            </div>
+        </form>
     </div>
     <section id="lineup-list">
 

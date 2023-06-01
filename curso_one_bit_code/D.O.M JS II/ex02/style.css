@@ -8,3 +8,7 @@ header {
     color: #00e297;
     padding: 25px;
 }
+
+form {
+    display: none;
+}
