@@ -12,7 +12,7 @@
     <header>
         <h1>Team lineup</h1>
         <nav>
-            <button onclick="FormAddPlayer()" id="lineup-player-button">Lineup player</button>
+            <button onclick="FormLineup()" id="lineup-player-button">Lineup player</button>
             <button onclick="FormRemovePlayer()" id="remove-player-button">Remove player</button>
         </nav>
     </header>
@@ -57,17 +57,24 @@
             <div id="div-input-shirt-num">
                 <label for="shirt-num">Shirt number of player: </label>
                 <input type="number" id="shirt-num">
-                <input type="button" value="subimit" onclick=";checkedPlayerRemove()">
+                <input type="button" value="subimit" onclick="checkedPlayerRemove()">
             </div>
             <div id="div-return-form">
                 <div id="div-return-name">
                     <h3 id="h3-name">name: </h3>
+                    <p id="p-name"></p>
                 </div>
                 <div id="div-return-number">
                     <h3 id="h3-num">shirt number: </h3>
+                    <p id="p-num"></p>
                 </div>
                 <div id="div-return-position">
                     <h3 id="h3- position">position: </h3>
+                    <p id="p-position"></p>
+                </div>
+                <div id="div-button-conf">
+                    <input type="button" onclick="removePlayer()" value="Remove">
+                    <input type="button" onclick="formRemovePlayer()" value="Cancel">
                 </div>
             </div>
         </form>
