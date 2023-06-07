@@ -1,4 +1,4 @@
-listPlayers = []
+const listPlayers = []
 const divPlayer = "";
 i = 0;
 function FormLineup() {
@@ -49,12 +49,11 @@ function lineup() {
         position: positionPlayer
     }
     
-    listPlayers.push(player)
-
     i++
     
-    FormAddPlayer()
     cleanFieldLineup()
+
+    return listPlayers.push(player)
 }
 
 function FormRemovePlayer() {
@@ -129,4 +128,9 @@ function cleanFieldremove() {
     const shirtNum = document.querySelector("#shirt-num")
     
     shirtNum.value = ""
+}
+ 
+function cleanFielddivReturnForm() {
+    const clean = document.querySelector("#div-return-form")
+    clean.style.display = "none"
 }
