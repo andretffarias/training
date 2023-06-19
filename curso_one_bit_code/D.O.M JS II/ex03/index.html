@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div id="div-name">
+            <label for="full-name">Full name: </label>
+            <input type="text" id="full-name">
+        </div>
+        <div id="div-inputs-of-tecnologies">
+            <p>Add technologies: </p>
+            <div id="div-tecnologies">
+
+            </div>
+            <input type="button" id="button-add-new-input" value="add">
+        </div>
+        <div id="div-input-radio">
+            <p id="title-input-radio">Time experience:</p>
+
+            <input type="radio" name="time-experience" id="time-experience-01" value="0-2 years" required>
+            <label for="time-experience-01">0-2 Years</label>
+            <br>
+            <input type="radio" name="time-experience" id="time-experience-02" value="3-4 years">
+            <label for="time-experience-02">3-4 Years</label>
+            <br>
+            <input type="radio" name="time-experience" id="time-experience-03" value="5+ years">
+            <label for="time-experience-03">5+ Years</label>
+        </div>
+        <div id="div-button-register">
+            <input type="button" value="register">
+        </div>
+    </form>
+</body>
+</html>
