@@ -1,15 +1,24 @@
 function climb(){
-    //get inputs:
-    let ul = document.querySelector("#lineup-list")
-    let name = document.querySelector("#input-name").value
-    let shirtNum = document.querySelector("#input-shirt-number").value
-    let position = document.querySelector('input[name=radio-opition]:checked').value
-
+    
     //create tags:
     let li = document.createElement('li')
     let nameLabel = document.createElement('p')
     let shirtNumLabel = document.createElement('p')
     let positionLabel = document.createElement('p')
+    
+    let name = document.createElement("p")
+    let shirtNum = document.createElement("p")
+    let position = document.createElement("p")
+
+    //get inputs:
+    let ul = document.querySelector("#lineup-list")
+    nameValue = document.querySelector("#input-name").value
+    shirtNumValue = document.querySelector("#input-shirt-number").value
+    positionValue = document.querySelector('input[name=radio-opition]:checked').value
+
+    name.innerText = nameValue
+    shirtNum.innerText = shirtNumValue
+    position.innerText = positionValue
 
     //seting tags:
     nameLabel.innerText = "Name: "
@@ -20,16 +29,36 @@ function climb(){
     shirtNumLabel.style.fontWeight = "bold";
     positionLabel.style.fontWeight = "bold";
 
-    //linking the tags:
-    li.append(nameLabel, name, shirtNumLabel, shirtNum, positionLabel, position)
-    ul.appendChild(li)
-
-    //calling fildsCleaning() function to clean the filds:
-    fieldsCleaning()
+    liChecked = document.getElementById("li-" + shirtNumValue)
+    
+    if (liChecked == null){
+        if (nameValue !== "" && shirtNumValue !== ""){
+            li.id = "li-" + shirtNumValue
+    
+            li.append(nameLabel, name, shirtNumLabel, shirtNum, positionLabel, position)
+            ul.appendChild(li)
+    
+            fieldsCleaning()
+        }else{alert("field not fieled")}
+    }else{alert("Player number in use.")}
 }
 
 function remove(){
-    window.alert("remove")
+    let shirtNum = document.querySelector("#shirt-number-input-remove").value
+    let ul = document.querySelector("ul")
+    let liId = "li-" + shirtNum
+    let li = document.getElementById(liId)
+    
+    //requiring confirmation:
+    if (li !== null){
+        let name = li.querySelector("p:nth-child(2)").innerText
+        let conf = window.confirm("Remove: " + name)
+        if (conf == true){
+            ul.removeChild(li)
+        }
+    }else{alert("player not found")}
+
+    fieldsCleaning()
 }
 
 function fieldsCleaning(){
