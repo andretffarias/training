@@ -9,13 +9,44 @@
 </head>
 <body>
     <header>
-        <button onclick="ADD()">ADD</button>
-        <button onclick="REMOVE()">REMOVE</button>
+        <div id="div-add-player">
+            <h2>ADD PLAYER:</h2>
+            <p>Position:</p>
+            <div id="div-input-fields">
+                <label for="input-name">Name:</label>
+                <input type="text" id="input-name" required>
+                <label for="input-shirt-number">Shirt number:</label>
+                <input type="number" id="input-shirt-number" required>
+            </div>
+            <div id="div-radios">
+                <input type="radio" name="radio-opition" id="opition-gol" value="GOL" required>
+                <label for="opition-gol">GOL</label>
+                <input type="radio" name="radio-opition" id="opition-ata" value="ATA" required>
+                <label for="opition-ata">ATA</label>
+                <input type="radio" name="radio-opition" id="opition-zag" value="ZAG" required>
+                <label for="opition-zag">ZAG</label>
+                <input type="radio" name="radio-opition" id="opition-vol" value="VOL" required>
+                <label for="opition-vol">VOL</label>
+                <input type="radio" name="radio-opition" id="opition-mc" value="MC" required>
+                <label for="opition-mc">MC</label>
+                <input type="radio" name="radio-opition" id="opition-mei" value="MEI" required>
+                <label for="opition-mei">MEI</label>
+            </div>
+            <button onclick="climb()">CLIMB</button>
+        </div>
+        <br><hr><br>
+        <div id="div-remove-player">
+            <h2>REMOVE PLAYER:</h2>
+            <label for="shirt-number-input-remove">Shirt number:</label>
+            <input type="number" id="shirt-number-input-remove">
+            <br>
+            <button onclick="remove()">REMOVE PLAYER</button>
+        </div>
+        <hr>
     </header>
     <main>
-        <h1>Escalação:</h1>
-        <ul id="list-escalacao">
-        </ul>
+        <h1>Lineup:</h1>
+        <ul id="lineup-list"></ul>
     </main>
 </body>
 </html>
