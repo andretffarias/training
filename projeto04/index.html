@@ -3,46 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escalação</title>
+    <title>Lineup</title>
     <link rel="stylesheet" href="style.css">
     <script src="./index.js"></script>
 </head>
 <body>
     <header>
         <div id="div-add-player">
-            <h2>ADD PLAYER:</h2>
-            <p>Position:</p>
-            <div id="div-input-fields">
+            <h2 id="h2-add-player">ADD PLAYER:</h2>
+            <div id="div-field-name">
                 <label for="input-name">Name:</label>
-                <input type="text" id="input-name" required>
+                <input type="text" id="input-name" class="inp" required>
+            </div>
+            <div id="div-field-number">
                 <label for="input-shirt-number">Shirt number:</label>
-                <input type="number" id="input-shirt-number" required>
+                <input type="number" id="input-shirt-number" class="inp" required>
             </div>
-            <div id="div-radios">
-                <input type="radio" name="radio-opition" id="opition-gol" value="GOL" required>
-                <label for="opition-gol">GOL</label>
-                <input type="radio" name="radio-opition" id="opition-ata" value="ATA" required>
-                <label for="opition-ata">ATA</label>
-                <input type="radio" name="radio-opition" id="opition-zag" value="ZAG" required>
-                <label for="opition-zag">ZAG</label>
-                <input type="radio" name="radio-opition" id="opition-vol" value="VOL" required>
-                <label for="opition-vol">VOL</label>
-                <input type="radio" name="radio-opition" id="opition-mc" value="MC" required>
-                <label for="opition-mc">MC</label>
-                <input type="radio" name="radio-opition" id="opition-mei" value="MEI" required>
-                <label for="opition-mei">MEI</label>
+            <p id="p-position">Position:</p>
+            <div id="div-position">
+                <div id="div-radio-gol">
+                    <input type="radio" name="radio-opition" id="opition-gol" value="GOL" required>
+                    <label for="opition-gol">GOL</label>
+                </div>
+                <div id="div-radio-ata">
+                    <input type="radio" name="radio-opition" id="opition-ata" value="ATA" required>
+                    <label for="opition-ata">ATA</label>
+                </div>
+                <div id="div-radio-zag">
+                    <input type="radio" name="radio-opition" id="opition-zag" value="ZAG" required>
+                    <label for="opition-zag">ZAG</label>
+                </div>
+                <div id="div-radio-vol">
+                    <input type="radio" name="radio-opition" id="opition-vol" value="VOL" required>
+                    <label for="opition-vol">VOL</label>
+                </div>
+                <div id="div-radio-mc">
+                    <input type="radio" name="radio-opition" id="opition-mc" value="MC" required>
+                    <label for="opition-mc">MC</label>
+                </div>
+                <div id="div-radio-mei">
+                    <input type="radio" name="radio-opition" id="opition-mei" value="MEI" required>
+                    <label for="opition-mei">MEI</label>
+                </div>
             </div>
-            <button onclick="climb()">CLIMB</button>
+            <div id="div-button-add">
+                <button onclick="climb()">CLIMB</button>
+            </div>
         </div>
-        <br><hr><br>
         <div id="div-remove-player">
             <h2>REMOVE PLAYER:</h2>
-            <label for="shirt-number-input-remove">Shirt number:</label>
-            <input type="number" id="shirt-number-input-remove">
-            <br>
-            <button onclick="remove()">REMOVE PLAYER</button>
+            <div id="div-field-remove">
+                <label for="shirt-number-input-remove">Shirt number:</label>
+                <input type="number" id="shirt-number-input-remove" class="inp">
+            </div>
+            <div id="div-button-remove">
+                <button onclick="remove()">REMOVE PLAYER</button>
+            </div>
         </div>
-        <hr>
     </header>
     <main>
         <h1>Lineup:</h1>

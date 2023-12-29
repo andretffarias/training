@@ -1,3 +1,81 @@
-#lineup-list{
-    list-style: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #008cea;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.inp {
+    width: 150px;
+    height: 20px;
+    border: 1px solid #9a9a85;
+    border-radius: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+#div-add-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+    
+    margin: 25px;
+    padding: 30px;
+
+    border-radius: 15px;
+    background-color: #f5f5dc;
+}
+
+#h2-add-player {
+    margin-bottom: 25px;
+}
+
+#div-field-name {
+    display: flex;
+    gap: 49px;
+}
+
+#p-position {
+    margin: 10px;
+}
+
+#div-position {
+    display: grid;
+    grid-template-columns: 50px 50px;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px 0px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#div-remove-player {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 25px;
+    
+    margin: 25px;
+    padding: 30px;
+
+    border-radius: 15px;
+    background-color: #f5f5dc;
+}
+
+#shirt-number-input-remove {
+    width: 60px;
 }
