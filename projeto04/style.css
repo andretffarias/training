@@ -5,21 +5,22 @@
     text-decoration: none;
 }
 
-body {
-    background-color: #008cea;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-}
-
 .inp {
     width: 150px;
     height: 20px;
     border: 1px solid #9a9a85;
     border-radius: 10px;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: #008cea;
+}
+
 
 header {
     display: flex;
@@ -78,4 +79,47 @@ header {
 
 #shirt-number-input-remove {
     width: 60px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 20px;
+
+    border-radius: 15px;
+    background-color: #f5f5dc;
+}
+
+ul {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+
+    padding: 30px;
+
+    min-width: 280px;
+    min-height: 330px;
+
+    list-style: none;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    height: 300px;
+    gap: 10px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+li > div {
+    display: flex;
+    flex-direction: row;
 }

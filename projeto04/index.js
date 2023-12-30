@@ -29,13 +29,21 @@ function climb(){
     shirtNumLabel.style.fontWeight = "bold";
     positionLabel.style.fontWeight = "bold";
 
+    let divName = document.createElement('div')
+    let divNum = document.createElement('div')
+    let divPosition = document.createElement('div')
+
+    divName.append(nameLabel, name)
+    divNum.append(shirtNumLabel, shirtNum)
+    divPosition.append(positionLabel, position)
+
     liChecked = document.getElementById("li-" + shirtNumValue)
     
     if (liChecked == null){
         if (nameValue !== "" && shirtNumValue !== ""){
             li.id = "li-" + shirtNumValue
     
-            li.append(nameLabel, name, shirtNumLabel, shirtNum, positionLabel, position)
+            li.append(divName, divNum, divPosition)
             ul.appendChild(li)
     
             fieldsCleaning()
