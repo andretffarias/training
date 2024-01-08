@@ -1,6 +1,5 @@
 const btnAddTech = document.querySelector("#btn-add-tech");
 const btnAddDev = document.querySelector('#btn-add-dev')
-let fullName = document.querySelector('#input-full-name').value
 const developers = [];
 let indexRow = 0;
 
@@ -21,10 +20,10 @@ function createInput(id, name, value, type = "text") {
 }
 
 btnAddTech.addEventListener("click", function addTechField() {
-  if (document.querySelector("#inp-full-name").value.trim() !== "") {
+  if (document.querySelector("#input-full-name").value.trim() !== "") {
     indexRow++;
 
-    const techList = document.querySelector("#tech-list");
+    const techList = document.querySelectorAll('#tech-list li');
 
     const newRow = document.createElement("li");
     newRow.id = "input-row-" + indexRow;
@@ -67,7 +66,7 @@ btnAddTech.addEventListener("click", function addTechField() {
     );
 
     removeRowBtn.addEventListener("click", function () {
-      techList.removeChild(newRow);
+      newRow.remove();
     });
 
     newRow.append(
@@ -88,8 +87,27 @@ btnAddTech.addEventListener("click", function addTechField() {
 });
 
 btnAddDev.addEventListener('click', function () {
-    const dev = {
+  const xpList = document.querySelectorAll('li')
+  let fullName = document.querySelector('#input-full-name').value
+    const dev = { 
         name: fullName,
-        technologies: []
+        technologiesList: []
     }
+  
+  xpList.forEach(techElement => {
+    const nameTech = techElement.querySelector('input[type:text]').value
+    const timeXpElement = techElement.querySelector('input[type=radio]:checked')
+
+    if (timeXpElement) {
+      const timeXp = timeXpElement.value
+
+      const tech = {
+        nameTech: nameTech,
+        timeXp: timeXp
+      }
+      
+      dev.technologiesList.push(tech)
+    }else{alert('fill in all fields')}
+  });
+  console.log(developers)
 })
