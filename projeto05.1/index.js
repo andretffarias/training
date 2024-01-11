@@ -91,14 +91,14 @@ btnAddDev.addEventListener('click', function () {
   const xpList = document.querySelectorAll('#tech-list li')
 
   
+  const dev = { 
+    name: fullName,
+    technologiesList: []
+  }
+
   xpList.forEach(techElement => {
     const nameTech = techElement.querySelector("input[type='text']").value
     const timeXpElement = techElement.querySelector('input[type=radio]:checked')
-
-    const dev = { 
-      name: fullName,
-      technologiesList: []
-    }
     
     if (timeXpElement) {
       const timeXp = timeXpElement.value
@@ -111,7 +111,8 @@ btnAddDev.addEventListener('click', function () {
       dev.technologiesList.push(tech)
     }
 
-    developers.push(dev)
   });
+  
+  developers.push(dev)
   console.log(developers)
 })
