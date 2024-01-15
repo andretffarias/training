@@ -23,7 +23,7 @@ btnAddTech.addEventListener("click", function addTechField() {
   if (document.querySelector("#input-full-name").value.trim() !== "") {
     indexRow++;
 
-    const techList = document.querySelectorAll('#tech-list li');
+    const techList = document.querySelector('#tech-list');
 
     const newRow = document.createElement("li");
     newRow.id = "input-row-" + indexRow;
@@ -87,17 +87,19 @@ btnAddTech.addEventListener("click", function addTechField() {
 });
 
 btnAddDev.addEventListener('click', function () {
-  const xpList = document.querySelectorAll('li')
   let fullName = document.querySelector('#input-full-name').value
-    const dev = { 
-        name: fullName,
-        technologiesList: []
-    }
-  
-  xpList.forEach(techElement => {
-    const nameTech = techElement.querySelector('input[type:text]').value
-    const timeXpElement = techElement.querySelector('input[type=radio]:checked')
+  const xpList = document.querySelectorAll('#tech-list li')
 
+  
+  const dev = { 
+    name: fullName,
+    technologiesList: []
+  }
+
+  xpList.forEach(techElement => {
+    const nameTech = techElement.querySelector("input[type='text']").value
+    const timeXpElement = techElement.querySelector('input[type=radio]:checked')
+    
     if (timeXpElement) {
       const timeXp = timeXpElement.value
 
@@ -107,7 +109,10 @@ btnAddDev.addEventListener('click', function () {
       }
       
       dev.technologiesList.push(tech)
-    }else{alert('fill in all fields')}
+    }
+
   });
+  
+  developers.push(dev)
   console.log(developers)
 })
