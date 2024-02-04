@@ -39,9 +39,17 @@ function allowedInput (ev) {
 function calculate () {
     resultInput.value = 'ERROR'
     resultInput.classList.add('error')
+    
     const result = eval(input.value)
     resultInput.value = result
     resultInput.classList.remove('error')
+    
+    if (eval(input.value) === undefined) {
+        resultInput.value = 'ERROR'
+        resultInput.classList.add('error')
+    }
+
+    animationBtnCopy(true)
 }
 
 function clear () {
@@ -51,16 +59,31 @@ function clear () {
 
 function clipboard () {
     navigator.clipboard.writeText(resultInput.value)
+    animationBtnCopy(false)
+}
 
-    if (copyBtn.innerText === 'Copy' && resultInput.value !== '') {
-        copyBtn.innerText = 'Copyed'
-        copyBtn.classList.add('success')
-    }else {
+function animationBtnCopy (equal) {
+    if (equal === true) {
         copyBtn.innerText = 'Copy'
         copyBtn.classList.remove('success')
-        resultInput.value = ''
-    }
+    }else {
+        if (copyBtn.innerText === 'Copy' && resultInput.value !== '') {
+            copyBtn.innerText = 'Copyed'
+            copyBtn.classList.add('success')
+            
+            if (resultInput.value === 'ERROR') {
+                resultInput.value = ''
+                resultInput.classList.remove('error')
 
+                copyBtn.innerText = 'Copy'
+                copyBtn.classList.remove('success')
+            }
+        }else {
+            copyBtn.innerText = 'Copy'
+            copyBtn.classList.remove('success')
+            resultInput.value = ''
+        }
+    }
 }
 
 function switchTheme () {
