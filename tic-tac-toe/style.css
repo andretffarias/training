@@ -10,8 +10,8 @@
     --hover-color: #2c3136;
     --font-color: #f1f5f9;
     --green-color: #4dff91;
-    --blue-color: #0000ff;
-    --red-color: #ff0043;   
+    --player-1-color: #0000ff;
+    --player-2-color: #ff0043;   
 }
 
 html {
@@ -19,28 +19,33 @@ html {
 }
 
 body {
-    background: var(--bg-color);
-    color: var(--font-color);
-
     display: flex;
     flex-direction: column;
+    height: 100%;
+    
+    background: var(--bg-color);
+    color: var(--font-color);
 }
 
 main {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100%;
+    gap: 40px;
 
     margin: 0 auto;
     min-width: 30rem;
+    max-width: 480px;
 }
 
 header {
-    padding: 30px 5px 30px 20px;
+    padding: 30px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 nav {
@@ -54,12 +59,16 @@ nav {
 }
 
 #btn-play {
-    width: 50px;
-    height: 60px;
+    width: 80px;
+    height: 50px;
 
     background: var(--green-color);
     border: 1px solid var(--border-color);
-    border-radius: 15px 0px 0px 15px;
+    border-radius: 30px;
+
+    font-weight: 800;
+    font-size: 20px;
+    color: #286f43;
 }
 
 #btn-play:hover {
@@ -78,29 +87,40 @@ input::placeholder {
 }
 
 #input-p1 {
-    border-radius: 0px 10px 0px 0px;
-    background: var(--blue-color);
+    border-radius: 15px;
+    background: var(--player-1-color);
 }
 
 #input-p2 {
-    border-radius: 0px 0px 10px 0px;
-    background: var(--red-color);
+    border-radius: 15px;
+    background: var(--player-2-color);
 }
 
 #section-game {
-    display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 2px;
-
-    margin-bottom: 20px;
+    gap: 4px;
 }
 
 .block {
-    width: 100px;
-    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 150px;
+
     background: #787c802f;
+}
+.block > p {
+    width: 150px;
+    height: 150px;
+    font-size: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .block:hover {
@@ -124,7 +144,7 @@ input::placeholder {
     background: var(--border-color);
 }
 
-#div-info-p1 {
+#div-inp-p1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,11 +157,11 @@ input::placeholder {
     font-size: 20px;
 }
 
-#x {
+#p-inp-p1 {
     font-size: 40px;
 }
 
-#div-info-p2 {
+#div-inp-p2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,28 +174,75 @@ input::placeholder {
     font-size: 20px;
 }
 
-#o {
+#p-inp-p2 {
     font-size: 40px;
 }
 
-#div-winer {
+#div-p1 {
+    order: 1;
+    font-size: 30px;
+    font-weight: 900;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 30px;
+    justify-content: center;
+    gap: 10px;
 }
 
-#p-win {
+#div-display {
+    order: 2;
+}
+
+#div-p2 {
+    order: 3;
     font-size: 30px;
+    font-weight: 900;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-#p-winer {
-    font-size: 40px;
+#div-inp-p1 {
+    order: 1;
 }
 
+#div-inp-p2 {
+    order: 2;
+}
 footer {
     margin-top: 20px;
-    height: 20px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: var(--border-color);
+}
+
+.p1 {
+    color: var(--player-1-color);
+}
+
+.p2 {
+    color: var(--player-2-color);
+}
+
+#arrow {
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#x {
+    font-size: 40px;
+    color: var(--player-1-color);
+}
+
+#o {
+    font-size: 40px;
+    color: var(--player-2-color);
 }
