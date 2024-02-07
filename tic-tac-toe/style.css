@@ -237,12 +237,6 @@ footer {
     font-weight: 900;
 }
 
-#x {
-    font-size: 40px;
-    color: var(--player-1-color);
-}
-
-#o {
-    font-size: 40px;
-    color: var(--player-2-color);
+.win {
+    color: var(--green-color);
 }
