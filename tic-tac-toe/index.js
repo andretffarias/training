@@ -63,58 +63,58 @@ function game () {
                 
             }
 
+            const a0 = document.querySelector('#a0')
             const a1 = document.querySelector('#a1')
-            const b1 = document.querySelector('#b1')
-            const c1 = document.querySelector('#c1')
             const a2 = document.querySelector('#a2')
+            const b0 = document.querySelector('#b0')
+            const b1 = document.querySelector('#b1')
             const b2 = document.querySelector('#b2')
+            const c0 = document.querySelector('#c0')
+            const c1 = document.querySelector('#c1')
             const c2 = document.querySelector('#c2')
-            const a3 = document.querySelector('#a3')
-            const b3 = document.querySelector('#b3')
-            const c3 = document.querySelector('#c3')
 
-            const a1stt = a1.dataset.status
-            const b1stt = b1.dataset.status
-            const c1stt = c1.dataset.status
-            const a2stt = a2.dataset.status
-            const b2stt = b2.dataset.status
-            const c2stt = c2.dataset.status
-            const a3stt = a3.dataset.status
-            const b3stt = b3.dataset.status
-            const c3stt = c3.dataset.status
+            const a0stts = a0.dataset.status
+            const a1stts = a1.dataset.status
+            const a2stts = a2.dataset.status
+            const b0stts = b0.dataset.status
+            const b1stts = b1.dataset.status
+            const b2stts = b2.dataset.status
+            const c0stts = c0.dataset.status
+            const c1stts = c1.dataset.status
+            const c2stts = c2.dataset.status
 
-            if (a1stt === 'x' && a2stt === 'x' && a3stt === 'x') {
-                win('p1', a1, a2, a3)
-            }else if (b1stt === 'x' && b2stt === 'x' && b3stt === 'x') {
-                win('p1', b1, b2, b3)
-            }else if (c1stt === 'x' && c2stt === 'x' && c3stt === 'x') {
-                win('p1', c1, c2, c3)
-            }else if (a1stt === 'x' && b1stt === 'x' && c1stt === 'x') {
+            if (a0stts === 'x' && b0stts === 'x' && c0stts === 'x') {
+                win('p1', a0, b0, c0)
+            }else if (a1stts === 'x' && b1stts === 'x' && c1stts === 'x') {
                 win('p1', a1, b1, c1)
-            }else if (a2stt === 'x' && b2stt === 'x' && c2stt === 'x') {
+            }else if (a2stts === 'x' && b2stts === 'x' && c2stts === 'x') {
                 win('p1', a2, b2, c2)
-            }else if (a3stt === 'x' && b3stt === 'x' && c3stt === 'x') {
-                win('p1', a3, b3, c3)
-            }else if (a1stt === 'x' && b2stt === 'x' && c3stt === 'x') {
-                win('p1', a1, b2, c3)
-            }else if (c1stt === 'x' && b2stt === 'x' && a3stt === 'x') {
-                win('p1', c1, b2, a3)
-            }else if (a1stt === 'o' && a2stt === 'o' && a3stt === 'o') {
-                win('p2', a1, a2, a3)
-            }else if (b1stt === 'o' && b2stt === 'o' && b3stt === 'o') {
-                win('p2', b1, b2, b3)
-            }else if (c1stt === 'o' && c2stt === 'o' && c3stt === 'o') {
-                win('p2', c1, c2, c3)
-            }else if (a1stt === 'o' && b1stt === 'o' && c1stt === 'o') {
+            }else if (a0stts === 'x' && a1stts === 'x' && a2stts === 'x') {
+                win('p1', a0, a1, a2)
+            }else if (b0stts === 'x' && b1stts === 'x' && b2stts === 'x') {
+                win('p1', b0, b1, b2)
+            }else if (c0stts === 'x' && c1stts === 'x' && c2stts === 'x') {
+                win('p1', c0, c1, c2)
+            }else if (a0stts === 'x' && b1stts === 'x' && c2stts === 'x') {
+                win('p1', a0, b1, c2)
+            }else if (a2stts === 'x' && b1stts === 'x' && c0stts === 'x') {
+                win('p1', a2, b1, c0)
+            }else if (a0stts === 'o' && b0stts === 'o' && c0stts === 'o') {
+                win('p2', a0, b0, c0)
+            }else if (a1stts === 'o' && b1stts === 'o' && c1stts === 'o') {
                 win('p2', a1, b1, c1)
-            }else if (a2stt === 'o' && b2stt === 'o' && c2stt === 'o') {
+            }else if (a2stts === 'o' && b2stts === 'o' && c2stts === 'o') {
                 win('p2', a2, b2, c2)
-            }else if (a3stt === 'o' && b3stt === 'o' && c3stt === 'o') {
-                win('p2', a3, b3, c3)
-            }else if (a1stt === 'o' && b2stt === 'o' && c3stt === 'o') {
-                win('p2', a1, b2, c3)
-            }else if (c1stt === 'o' && b2stt === 'o' && a3stt === 'o') {
-                win('p2', c1, b2, a3)
+            }else if (a0stts === 'o' && a1stts === 'o' && a2stts === 'o') {
+                win('p2', a0, a1, a2)
+            }else if (b0stts === 'o' && b1stts === 'o' && b2stts === 'o') {
+                win('p2', b0, b1, b2)
+            }else if (c0stts === 'o' && c1stts === 'o' && c2stts === 'o') {
+                win('p2', c0, c1, c2)
+            }else if (a0stts === 'o' && b1stts === 'o' && c2stts === 'o') {
+                win('p2', a0, b1, c2)
+            }else if (a2stts === 'o' && b1stts === 'o' && c0stts === 'o') {
+                win('p2', a2, b1, c0)
             }
 
         }

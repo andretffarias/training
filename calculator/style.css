@@ -12,10 +12,19 @@
   --error-color: #ff0043;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background-color: var(--bg-color);
   color: var(--font-color);
   font-family: "Ubuntu", sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 main {
@@ -102,6 +111,10 @@ input {
   display: block;
   height: 4.25rem;
   width: 6rem;
+}
+
+#text-footer {
+  color: #f1f5f9;
 }
 
 .flex {
