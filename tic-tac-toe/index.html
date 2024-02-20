@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
     <script src="index.js" defer></script>
     <title>Tic-Tac-Toe</title>
 </head>
-
 <body>
-    <header>
-        <h1>Tic-Tac-Toe</h1>
-    </header>
     <main>
-        <section id="section-game">
-            <div id="a1" class="block" data-status="undefined"><p id="p-block-a1"></p></div>
-            <div id="b1" class="block" data-status="undefined"><p id="p-block-b1"></p></div>
-            <div id="c1" class="block" data-status="undefined"><p id="p-block-c1"></p></div>
-            <div id="a2" class="block" data-status="undefined"><p id="p-block-a2"></p></div>
-            <div id="b2" class="block" data-status="undefined"><p id="p-block-b2"></p></div>
-            <div id="c2" class="block" data-status="undefined"><p id="p-block-c2"></p></div>
-            <div id="a3" class="block" data-status="undefined"><p id="p-block-a3"></p></div>
-            <div id="b3" class="block" data-status="undefined"><p id="p-block-b3"></p></div>
-            <div id="c3" class="block" data-status="undefined"><p id="p-block-c3"></p></div>
+        <header>
+            <h1>Tic-Tac-Toe</h1>
+        </header>
+        <section id="gameBoard">
+            <span data-region="0.0"></span>
+            <span data-region="0.1"></span>
+            <span data-region="0.2"></span>
+            <span data-region="1.0"></span>
+            <span data-region="1.1"></span>
+            <span data-region="1.2"></span>
+            <span data-region="2.0"></span>
+            <span data-region="2.1"></span>
+            <span data-region="2.2"></span>
         </section>
-        <section id="section-info">
-            <div id="div-inp-p1">
-                <input type="text" id="input-p1" placeholder=" Player 1">
-                <p id="p-inp-p1">X</p>
+        <section id="display">
+            <div id="div-players">
+                <div id="display-div-01">
+                    <label for="player-1">X</label>
+                    <input type="text" id="player-1" placeholder="  Player 1">
+                </div>
+                <div id="display-div-02">
+                    <label for="player-2">O</label>
+                    <input type="text" id="player-2" placeholder="  Player 2">
+                </div>
             </div>
-            <div id="div-display">
-                <button id="btn-play">Play</button>
-            </div>
-            <div id="div-inp-p2">
-                <input type="text" id="input-p2" placeholder=" Player 2">
-                <p id="p-inp-p2">O</p>
+            <div id="display-main">
+                <div id="div-span">
+                    <h2>Turn: <span id="span-turn"></span></h2>
+                </div>
+                <div id="div-btn">
+                    <button id="start">Start</button>
+                </div>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy;André Farias</p>
+        <span id="span-footer">&copy;André Farias</span>
     </footer>
 </body>
 </html>

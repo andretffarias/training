@@ -1,160 +1,111 @@
-const sectionInfo = document.querySelector('#section-info')
+const boardRegions = document.querySelectorAll('#gameBoard span')
+let vBoard = []
+let turnPlayer = ''
 
-const display = document.querySelector('#div-display')
-const divInputP1 = document.querySelector('#div-inp-p1')
-const divInputP2 = document.querySelector('#div-inp-p2')
+function updateTitle() {
+    const player = document.getElementById(turnPlayer)
 
-const btnPlay = document.querySelector('#btn-play')
-const blocks = document.querySelectorAll('.block')
-
-function game () {
-    const inpNameP1 = document.querySelector('#input-p1')
-    const inpNameP2 = document.querySelector('#input-p2')
-    
-    const nameP1 = inpNameP1.value
-    const nameP2 = inpNameP2.value
-    
-    let shiftStatus  = 'p1'
-
-    const statusArrow = document.createElement('p')
-    statusArrow.id = 'arrow'
-    statusArrow.innerText = '<<<'
-
-    display.append(statusArrow)
-
-    divInputP1.remove()
-    divInputP2.remove()
-    
-    if (nameP1 != '') {
-        appendDiv(1, nameP1, 'X')
+    if (player.value === '' && turnPlayer === 'player-1') {
+        document.querySelector('#span-turn').innerText = 'X'
+    }else if (player.value === '' && turnPlayer === 'player-2') {
+        document.querySelector('#span-turn').innerText = 'O'
     }else {
-        appendDiv(1, 'Player 1', 'X')
+        document.querySelector('#span-turn').innerText = player.value 
     }
-    
-    if (nameP2 != '') {
-        appendDiv(2, nameP2, 'O', shiftStatus)
-    }else {
-        appendDiv(2, 'Player 2', 'O', shiftStatus)
-    }
-    function turn (block) {
-        const idDiv = block.id
-            const p = document.querySelector('#p-block-' + idDiv)
-            
-            if (p.innerText === '') {
-                if (shiftStatus  === 'p1') {
-                    p.innerText = 'X'
-                    block.dataset.status = 'x'
-                    
-                    block.classList.add('p1')
-                    
-                    
-                    shiftStatus  = 'p2'
-                    statusArrow.innerText = '>>>'
-                }else {
-                    p.innerText = 'O'
-                    block.dataset.status = 'o'
-                    
-                    block.classList.add('p2')
-                    
-                    shiftStatus  = 'p1'
-                    statusArrow.innerText = '<<<'
-                }
-                
-                
-            }
-
-            const a0 = document.querySelector('#a0')
-            const a1 = document.querySelector('#a1')
-            const a2 = document.querySelector('#a2')
-            const b0 = document.querySelector('#b0')
-            const b1 = document.querySelector('#b1')
-            const b2 = document.querySelector('#b2')
-            const c0 = document.querySelector('#c0')
-            const c1 = document.querySelector('#c1')
-            const c2 = document.querySelector('#c2')
-
-            const a0stts = a0.dataset.status
-            const a1stts = a1.dataset.status
-            const a2stts = a2.dataset.status
-            const b0stts = b0.dataset.status
-            const b1stts = b1.dataset.status
-            const b2stts = b2.dataset.status
-            const c0stts = c0.dataset.status
-            const c1stts = c1.dataset.status
-            const c2stts = c2.dataset.status
-
-            if (a0stts === 'x' && b0stts === 'x' && c0stts === 'x') {
-                win('p1', a0, b0, c0)
-            }else if (a1stts === 'x' && b1stts === 'x' && c1stts === 'x') {
-                win('p1', a1, b1, c1)
-            }else if (a2stts === 'x' && b2stts === 'x' && c2stts === 'x') {
-                win('p1', a2, b2, c2)
-            }else if (a0stts === 'x' && a1stts === 'x' && a2stts === 'x') {
-                win('p1', a0, a1, a2)
-            }else if (b0stts === 'x' && b1stts === 'x' && b2stts === 'x') {
-                win('p1', b0, b1, b2)
-            }else if (c0stts === 'x' && c1stts === 'x' && c2stts === 'x') {
-                win('p1', c0, c1, c2)
-            }else if (a0stts === 'x' && b1stts === 'x' && c2stts === 'x') {
-                win('p1', a0, b1, c2)
-            }else if (a2stts === 'x' && b1stts === 'x' && c0stts === 'x') {
-                win('p1', a2, b1, c0)
-            }else if (a0stts === 'o' && b0stts === 'o' && c0stts === 'o') {
-                win('p2', a0, b0, c0)
-            }else if (a1stts === 'o' && b1stts === 'o' && c1stts === 'o') {
-                win('p2', a1, b1, c1)
-            }else if (a2stts === 'o' && b2stts === 'o' && c2stts === 'o') {
-                win('p2', a2, b2, c2)
-            }else if (a0stts === 'o' && a1stts === 'o' && a2stts === 'o') {
-                win('p2', a0, a1, a2)
-            }else if (b0stts === 'o' && b1stts === 'o' && b2stts === 'o') {
-                win('p2', b0, b1, b2)
-            }else if (c0stts === 'o' && c1stts === 'o' && c2stts === 'o') {
-                win('p2', c0, c1, c2)
-            }else if (a0stts === 'o' && b1stts === 'o' && c2stts === 'o') {
-                win('p2', a0, b1, c2)
-            }else if (a2stts === 'o' && b1stts === 'o' && c0stts === 'o') {
-                win('p2', a2, b1, c0)
-            }
-
-        }
-        function removeEv (block) {
-            block.removeEventListener('click', turn)
-        }
-    
-        function win (player, case1, case2, case3) {
-            blocks.forEach(function (block) {
-                removeEv(block)
-            })
-            case1.classList.add('win')
-            case2.classList.add('win')
-            case3.classList.add('win')
-            
-            case1.classList.remove('p1', 'p2')
-            case2.classList.remove('p1', 'p2')
-            case3.classList.remove('p1', 'p2')  
-        
-        }
-
 }
 
-
-function appendDiv (numberPlayer, pName, pLetter) {
-    const div = document.createElement('div')
-    div.id = 'div-p' + numberPlayer
-    div.classList.add('div-player')
-    
-    const name = document.createElement('p')
-    name.id = 'name-p' + numberPlayer
-    name.innerText = pName + ':'
-    
-    const letter = document.createElement('p')
-    letter.id = pLetter.toLowerCase()
-    letter.innerText = pLetter
-    
-    div.append(name, letter)
-    sectionInfo.append(div)
-    btnPlay.remove()
+function initializeGame() {
+    vBoard = [['', '', ''], ['', '', ''], ['', '', '']]
+    turnPlayer = 'player-1'
+    document.querySelector('h2').innerHTML = 'Turn: <span id="span-turn"></span>'
+    updateTitle()
+    boardRegions.forEach(function (element) {
+        element.classList.remove('win', 'p1', 'p2')
+        element.innerText = ''
+        element.classList.add('cursor-pointer')
+        element.style.hover = 'backgrald-color = #ccc'
+        element.addEventListener('click', handleBoardClick)
+    })
 }
 
-btnPlay.addEventListener('click', game)
+function getWinRegions() {
+    const winRegions = []
+    if (vBoard[0][0] && vBoard[0][0] === vBoard[0][1] && vBoard[0][0] === vBoard[0][2])
+        winRegions.push("0.0", "0.1", "0.2")
+    if (vBoard[1][0] && vBoard[1][0] === vBoard[1][1] && vBoard[1][0] === vBoard[1][2])
+        winRegions.push("1.0", "1.1", "1.2")
+    if (vBoard[2][0] && vBoard[2][0] === vBoard[2][1] && vBoard[2][0] === vBoard[2][2])
+        winRegions.push("2.0", "2.1", "2.2")
+    if (vBoard[0][0] && vBoard[0][0] === vBoard[1][0] && vBoard[0][0] === vBoard[2][0])
+        winRegions.push("0.0", "1.0", "2.0")
+    if (vBoard[0][1] && vBoard[0][1] === vBoard[1][1] && vBoard[0][1] === vBoard[2][1])
+        winRegions.push("0.1", "1.1", "2.1")
+    if (vBoard[0][2] && vBoard[0][2] === vBoard[1][2] && vBoard[0][2] === vBoard[2][2])
+        winRegions.push("0.2", "1.2", "2.2")
+    if (vBoard[0][0] && vBoard[0][0] === vBoard[1][1] && vBoard[0][0] === vBoard[2][2])
+        winRegions.push("0.0", "1.1", "2.2")
+    if (vBoard[0][2] && vBoard[0][2] === vBoard[1][1] && vBoard[0][2] === vBoard[2][0])
+        winRegions.push("0.2", "1.1", "2.0")
+    return winRegions
+}
+
+function disableRegion(element) {
+    element.classList.remove('cursor-pointer')
+    element.removeEventListener('click', handleBoardClick)
+}
+
+function handleWin(regions) {
+    regions.forEach(function (region) {
+        const regionClass = document.querySelector('[data-region="' + region + '"]')
+        regionClass.classList.remove("p1", "p2");
+        regionClass.classList.add("win")
+    })
+
+    const playerName = document.getElementById(turnPlayer).value
+    if (playerName === "" && turnPlayer === 'player-1') {
+        document.querySelector("h2").innerHTML = "(x) Win!!!"
+    }else if (playerName === "" && turnPlayer === 'player-2') {
+        document.querySelector("h2").innerHTML = "(o) Win!!!"
+    }else {
+        document.querySelector('h2').innerHTML = playerName + ' Win!!!'
+    }    
+}
+
+function handleBoardClick(ev) {
+    const span = ev.currentTarget
+    const region = span.dataset.region
+    const rowColumnPair = region.split('.')
+
+    const row = rowColumnPair[0]
+    const column = rowColumnPair[1]
+    
+    if(turnPlayer === 'player-1') {
+        vBoard[row][column] = 'X'
+
+        span.innerText = 'X'
+        span.classList.add('p1')
+    }else {
+        vBoard[row][column] = 'O'
+
+        span.innerText = 'O'
+        span.classList.add('p2')
+    }
+
+    disableRegion(span)
+
+    const winRegions = getWinRegions()
+    if (winRegions.length > 0) {
+        handleWin(winRegions)
+
+        boardRegions.forEach(function (region) {
+            disableRegion(region)
+        })
+    }else if (vBoard.flat().includes('')) {
+        turnPlayer = turnPlayer === 'player-1' ? 'player-2' : 'player-1'
+        updateTitle()
+    }else {
+        document.querySelector('h2').innerHTML = 'Draw!'
+    }
+}
+
+document.querySelector('#start').addEventListener('click', initializeGame)
