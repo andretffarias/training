@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <title>Tic-Tac-Toe</title>
 </head>
-
 <body>
     <main>
         <header>
             <h1>Tic-Tac-Toe</h1>
-            <nav>
-                <button id="btn-play">Play</button>
-                <div id="div-input">
-                    <input type="text" id="input-p1" placeholder=" Player 1">
-                    <input type="text" id="input-p2" placeholder=" Player 2">
-                </div>
-            </nav>
         </header>
-        <section id="section-game">
-            <div id="a1" class="block"><p id="p-block-a1"></p></div>
-            <div id="b1" class="block"><p id="p-block-b1"></p></div>
-            <div id="c1" class="block"><p id="p-block-c1"></p></div>
-            <div id="a2" class="block"><p id="p-block-2a"></p></div>
-            <div id="b2" class="block"><p id="p-block-2b"></p></div>
-            <div id="c2" class="block"><p id="p-block-2c"></p></div>
-            <div id="a3" class="block"><p id="p-block-3a"></p></div>
-            <div id="b3" class="block"><p id="p-block-3b"></p></div>
-            <div id="c3" class="block"><p id="p-block-3c"></p></div>
+        <section id="gameBoard">
+            <span data-region="0.0"></span>
+            <span data-region="0.1"></span>
+            <span data-region="0.2"></span>
+            <span data-region="1.0"></span>
+            <span data-region="1.1"></span>
+            <span data-region="1.2"></span>
+            <span data-region="2.0"></span>
+            <span data-region="2.1"></span>
+            <span data-region="2.2"></span>
         </section>
-        <section id="section-info">
-            <div id="div-info-p1">
-                <p id="p-name-p1">Player 1</p>
-                <p id="x">X</p>
+        <section id="display">
+            <div id="div-players">
+                <div id="display-div-01">
+                    <label for="player-1">X</label>
+                    <input type="text" id="player-1" placeholder="  Player 1">
+                </div>
+                <div id="display-div-02">
+                    <label for="player-2">O</label>
+                    <input type="text" id="player-2" placeholder="  Player 2">
+                </div>
             </div>
-            <div id="div-winer">
-                <p id="p-win">WIN</p>
-                <p id="p-winer">jorge</p>
-            </div>
-            <div id="div-info-p2">
-                <p id="p-name-p2">Player 2</p>
-                <p id="o">O</p>
+            <div id="display-main">
+                <div id="div-span">
+                    <h2>Turn: <span id="span-turn"></span></h2>
+                </div>
+                <div id="div-btn">
+                    <button id="start">Start</button>
+                </div>
             </div>
         </section>
-        <footer>
-            <p>&copy;André Farias</p>
-        </footer>
     </main>
+    <footer>
+        <span id="span-footer">&copy;André Farias</span>
+    </footer>
 </body>
 </html>
