@@ -10,7 +10,7 @@ module.exports = class Product {
         this.inStock += quantity
     }
 
-    addToStock(quantity) {
-        this.inStock += quantity
+    removeFromStock(quantity) {
+        this.inStock -= quantity
     }
 }
