@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>transaction</title>
+</head>
+<body>
+    <header>
+        <h1>G<span id="span-3">3</span>X <span id="bank-span">BANK</span></h1>
+    </header>
+    <main>
+        <form id="form-transaction">
+            <div id="header-new-transaction">
+                <h2>New transaction:</h2>
+            </div>
+            <div id="fields">
+                <div id="div-labels">
+                    <label for="name-input">Name:</label>
+                    <label for="transaction-amount">Amount:</label>
+                </div>
+                <div id="div-inputs">
+                    <input type="text" name="name" id="name-input" class="input" required>
+                    <input type="number" name="amount" id="amount-input" class="input" required>
+                    <input type="hidden" name="id" id="id">
+                </div>
+            </div>
+            <div id="div-btn">
+                <input type="submit" name="btn-form" id="btn-form" value="submit">
+            </div>
+            <section id="section-balance">
+                <p id="p-balance">Balance: <span id="balance-span"></span></p>
+            </section>
+        </form>
+        <div id="header-transaction">
+            <h2>Transactions:</h2>
+        </div>
+        <section id="transactions-list">
+        </section>
+    </main>
+    <footer>
+        <p>&copy;André Farias</p>
+    </footer>
+</body>
+</html>
