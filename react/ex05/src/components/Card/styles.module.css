@@ -1,0 +1,48 @@
+.container {
+    background-color: #000;
+    color: #fff;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+    border-radius: 25px;
+    padding: 30px 40px;
+    width: 800px;
+}
+
+.content {
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.btnCard {
+    width: 120px;
+    height: 35px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    color: #fff;
+    background-color: #212121;
+    border: #212121 solid 0px;
+    border-radius: 15px;
+}
+
+.btnCard:hover {
+    transition-delay: 0.3s;
+    border: #fff solid 2px;
+    cursor: pointer;
+}
+
+img {
+    width: 200px;
+}
