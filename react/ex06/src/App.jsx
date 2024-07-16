@@ -4,14 +4,14 @@ import "./App.css";
 export default function App() {
   const [password, setPassword] = useState("");
   const [copyText, setCopyText] = useState("copy");
-  const [passwordSize, setPasswordSize] = useState(12)
 
   function generetePassword() {
     const characters =
       "'1234567890-=!@#$%¨&*()_+qwertyuiop[asdfghjklç~]zxcvbnm,.;/QWERTYUIOP{ASDFGHJKLÇ^}ZXCVBNM<>:?";
+    const length = 12;
     let newPassword = "";
 
-    for (let i = 0; i < passwordSize; i++) {
+    for (let i = 0; i < length; i++) {
       const position = Math.floor(Math.random() * characters.length);
       newPassword += characters[position];
     }
@@ -27,19 +27,11 @@ export default function App() {
   return (
     <>
       <h1>Password generator</h1>
-      <div>
-        <label htmlFor="passwordSize">Size:</label>
-        <input 
-          type="number" 
-          id="passwordSize" 
-          min={1} 
-          value={passwordSize}
-          onChange={(ev) => setPasswordSize(ev.target.value)}
-        />
+      <div className="card">
+        <button onClick={generetePassword}>create</button>
+        <button onClick={copyToClipboard}>{copyText}</button>
+        <p>{password}</p>
       </div>
-      <button onClick={generetePassword}>create {passwordSize} characters password</button>
-      <button onClick={copyToClipboard}>{copyText}</button>
-      <p>{password}</p>
     </>
   );
 }
