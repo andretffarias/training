@@ -4,8 +4,8 @@ export default function useGameCollection() {
   const [games, setGames] = useState(() => {
     const storageGames = localStorage.getItem("obc-game-lib");
     if (!storageGames) return [];
-    const gameArrey = JSON.parse(storageGames);
-    return gameArrey;
+    const gameArray = JSON.parse(storageGames);
+    return gameArray;
   });
 
   const addGame = ({ title, cover }) => {
