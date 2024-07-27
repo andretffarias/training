@@ -3,7 +3,6 @@ import Header from "../components/Header";
 export default function Cart() {
     return (
       <section>
-        <Header />
         <h2>Carrinho</h2>
         <p>Os produtos atualmente em seu carrinho.</p>
         <ul>

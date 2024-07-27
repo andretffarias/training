@@ -4,9 +4,9 @@ export default function Header () {
     return (
         <header>
           <nav style={{display: "flex", gap: "2rem" }}>
-            <Link to="/products">Products</Link>
-            <Link to="/cart">Cart</Link>
             <Link to="/">Home</Link>
+            <Link to="/cart">Cart</Link>
+            <Link to="/products">Products</Link>
           </nav>
         </header>
     )
