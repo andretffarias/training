@@ -2,16 +2,32 @@
   width: 200px;
   height: 200px;
   border-radius: 15px;
-  background: #FFFFFF;
+  background: #2C2F33;
+  border: 2px solid #2C2F33;
+
+}.card:hover {
+  cursor: pointer;
+  border: 2px solid #5865F2;
+  transition-delay: 0.1s;
 }
 
 .headerCard {
-  text-align: center;
-  height: 50px;
-  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-bottom: 2px solid #5865F2;
 }
 
 .headerCard > p {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px 0px 0px 15px;
 }

@@ -4,7 +4,7 @@ export default function Header() {
     <header className="header">
       <h1>Week</h1>
       <div className="imgConfig">
-        <img src="../../../../public/config_dark.ico" alt="config" />
+        <img src="../../../../public/config_light.ico" alt="config" />
       </div>
     </header>
   );

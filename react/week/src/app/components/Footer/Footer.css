@@ -8,5 +8,7 @@ footer {
 }
 
 .spanName {
+  cursor: pointer;
   font-weight: bold;
+  color: #FFFFFF;
 }
