@@ -1,4 +1,4 @@
-export default function addTask({ list, setList, maxTasks }) {
+export default function addTask(list, setList, maxTasks) {
   if (list.length < maxTasks) {
     setList([...list, ""]);
   } else {

@@ -1,15 +1,20 @@
-import "./Card.css"
+import "./Card.css";
 
-export default function Card({ nameDay }) {
+export default function Card({ name, list }) {
   return (
     <div className="card">
       <div className="headerCard">
-        <p>{nameDay}</p>
+        <h3>{name}</h3>
       </div>
       <div className="taskList">
-        <div>bla bla bla</div>
-        <div>bla bla bla</div>
-        <div>bla bla bla</div>
+        {list.slice(0, 6).map((task, index) => (
+          <div key={index}>
+            <div>
+              {index + 1 + ". "}
+              {task}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

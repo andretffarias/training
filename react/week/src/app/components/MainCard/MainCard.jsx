@@ -1,15 +1,11 @@
 import { useState } from "react"
-import "./MainCard.css"
 import addTask from "../../../hooks/addTask"
+import removeTask from "../../../hooks/remove";
+import "./MainCard.css"
+import saveLocalStorage from "../../../hooks/saveLocalStorage";
 
-export default function MainCard({ name, taskList }) {
-  const [list, setList] = useState(taskList)
+export default function MainCard({ name, taskList, setTaskList }) {
   const maxTasks = 20;
-
-  function removeTask(index) {
-    const updatedList = list.filter((_, i) => i !== index)
-    setList(updatedList)
-  }
   
   return (
     <div className="mainCard">
@@ -17,7 +13,7 @@ export default function MainCard({ name, taskList }) {
         <h2>{name}</h2>
       </div>
       <div className="mainCard-taskList">
-        {list.map((task, index) => (
+        {taskList.map((task, index) => (
           <div key={index} className="task">
             <div>
               {index + 1 + ". "}
@@ -27,19 +23,20 @@ export default function MainCard({ name, taskList }) {
                 className="input" 
                 value={task}
                 onChange={(ev) => {
-                  const updatedList  = [...list]
+                  const updatedList  = [...taskList]
                   updatedList[index] = ev.target.value
-                  setList(updatedList)
+                  setTaskList(updatedList)
+                  saveLocalStorage(name, updatedList)
                 }}/>
             </div>
-            <div className="remove" onClick={() => removeTask(index)}>remove</div>
+            <div className="remove" onClick={() => removeTask(name, taskList, setTaskList, index)}>remove</div>
           </div>
         ))}
       </div>
       <div className="divBtn">
         <button 
         className="btnAdd" 
-        onClick={() => addTask({list, setList, maxTasks})}
+        onClick={() => addTask(name, taskList, setTaskList, maxTasks)}
         >Add</button>
       </div>
     </div>
