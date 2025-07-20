@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Users</title>
+</head>
+<body>
+  <header>
+    <h1>Users:</h1>
+  </header>
+  <div class="container">
+    <ul>
+      <% users.forEach(user => { %>
+        <li>
+          <form action="/" method="post">
+            <p>Name: <%= user.name %></p>
+            <p>Email: <%= user.email %></p>
+            <input type="submit" name="submitRemoveUser" value="remove" class="btn-delete">
+            <input type="hidden" name="email" value="<%= user.email %>">
+          </form>
+        </li>
+        <br>
+      <% }); %>
+    </ul>
+    <a href="/register"><button class="btn">register</button></a>
+  </div>
+  <footer>
+    <p>Developed by <a href="https://github.com/andretffarias" target="_blank" class="link">&copy;André Farias.</a></p>
+  </footer>
+</body>
+</html>

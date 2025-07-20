@@ -1,15 +1,11 @@
 import { useState } from "react"
 import "./MainCard.css"
 import addTask from "../../../hooks/addTask"
+import removeTask from "../../../hooks/removeTask";
 
 export default function MainCard({ name, taskList }) {
   const [list, setList] = useState(taskList)
   const maxTasks = 20;
-
-  function removeTask(index) {
-    const updatedList = list.filter((_, i) => i !== index)
-    setList(updatedList)
-  }
   
   return (
     <div className="mainCard">
@@ -32,7 +28,7 @@ export default function MainCard({ name, taskList }) {
                   setList(updatedList)
                 }}/>
             </div>
-            <div className="remove" onClick={() => removeTask(index)}>remove</div>
+            <div className="remove" onClick={() => removeTask(index, list)}>remove</div>
           </div>
         ))}
       </div>

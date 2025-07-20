@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  background: #5865F2;
+}
+
+.spanName {
+  cursor: pointer;
+  font-weight: bold;
+  color: #FFFFFF;
+}
